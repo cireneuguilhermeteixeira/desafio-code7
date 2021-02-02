@@ -14,7 +14,7 @@ Nesta aplicação, é possível gerenciar dívidas de clientes, sendo possível 
 - MongoDb;
 - Mongoose ~5.x;
 - JWT;
-- JSON data (para retornar os dados);
+- CORS;
 - PostMan (testar a API criada);
 - Mocha;
 - Supertest;
@@ -22,8 +22,9 @@ Nesta aplicação, é possível gerenciar dívidas de clientes, sendo possível 
 ### Frontend
 - Angular 10;
 - Modulos do Material;
-- Sweet Alert;
 - Interceptors de Requisições;
+- Criação de Providers;
+- Componentização;
 - Interceptors de Rotas;
 
 ## Testando a Aplicação no Postman:
