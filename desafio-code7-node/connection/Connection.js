@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/debit_code7'
-mongoose.connect(mongoURI,
+const mongoose = require('mongoose');
+var config = require('config');
+
+mongoose.connect(config.DBHost,
     { 
         useNewUrlParser: true,
         useFindAndModify: false,

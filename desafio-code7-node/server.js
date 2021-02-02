@@ -1,9 +1,9 @@
 const express = require('express')
 const bodyParser = require("body-parser");
 const path = require('path');
-const debtRouter = require('./routes/debt-routes')
-const authUserRouter = require('./routes/auth-user-routes')
-const userRouter = require('./routes/user-routes')
+const debtRouter = require('./app/routes/debt-routes')
+const authUserRouter = require('./app/routes/auth-user-routes')
+const userRouter = require('./app/routes/user-routes')
 const cors = require('cors')
 
 const app = express()
