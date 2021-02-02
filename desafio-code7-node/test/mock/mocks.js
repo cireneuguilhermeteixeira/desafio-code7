@@ -1,3 +1,5 @@
+process.env.NODE_ENV = 'test';
+
 const {ObjectID} = require('mongodb');
 const jwt = require('jsonwebtoken');
 const Debt = require('../../app/models/debt');
