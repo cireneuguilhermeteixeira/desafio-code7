@@ -306,3 +306,52 @@ describe('POST /auth/signin', () => {
       .end(done);
   })
 });
+
+
+
+describe('POST /auth/signup', () => {
+  it('Deve criar usuário.', (done) => {
+
+    var userToSave = {
+      name : 'Teste',
+      email : 'user_teste2@email.com',
+      password: "12345678"
+    }
+    request(app)
+      .post('/api/auth/signup')
+      .send(userToSave)
+      .expect(200)
+      .expect((res) => {
+        expect(res.body.success).toBe(true)
+      })
+      .end((err, res) => {
+        if(err) return done(err);
+
+        User.find({email: 'user_teste2@email.com'}).then((users) => {
+          expect(users.length).toBe(1);
+          done();
+        }).catch((err) => {
+          done(err);
+        });      
+      })
+  })
+
+
+  it('Deve retornar email duplicado.', (done) => {
+
+    var userToSave = {
+      name : 'Teste',
+      email : 'user_teste@email.com',
+      password: "12345678"
+    }
+    request(app)
+      .post('/api/auth/signup')
+      .send(userToSave)
+      .expect(200)
+      .expect((res) => {        
+        expect(res.body.success).toBe(false)
+        expect(res.body.data.message).toBe("já existe um usuário com esse e-mail")
+      })
+      .end(done);
+  })
+});
