@@ -1,0 +1,26 @@
+.center{
+    margin-top: 50px;
+    display: table;
+    margin: 0 auto;
+}
+
+.card-right{
+    overflow-y: scroll;
+    height: calc(100vh - 190px);   
+}
+
+
+.date-debt{
+    float: right;
+}
+
+.list-debt{
+    text-align: start;
+    list-style: none;
+    margin-left: -20px;
+}
+
+.list-debt li{
+    padding-bottom: 10px;
+}
+

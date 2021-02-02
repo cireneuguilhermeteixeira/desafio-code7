@@ -1,0 +1,9 @@
+.form-signin-heading{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-signin-heading img{
+    border-radius: 50%;
+    max-width: 150px;
+}

@@ -1,0 +1,88 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Clientes</h4>
+                      <p class="card-category"> Dados retirados da API JSONPlaceholder.</p>
+                  </div>
+                  <div class="card-body">
+
+                    
+                      <div class="table-responsive">
+                         
+                        <div class="row center" *ngIf="loadingClients">
+                            <mat-spinner>
+                            </mat-spinner>
+                        </div>
+
+                        <table class="table" *ngIf="!loadingClients">
+
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Nome
+                                  </th>
+                                  <th>
+                                     Zipcode
+                                  </th>
+                                  <th>
+                                      Empresa
+                                  </th>
+                                 
+                              </thead>
+                              <tbody>
+                                  
+                                  <tr *ngFor="let client of clients">
+                                      <td>
+                                          {{client.id}}
+                                      </td>
+                                      <td>
+                                        {{client.name}}
+
+                                    </td>
+                                      <td>
+                                          {{client.address.zipcode}}
+                                      </td>
+                                      <td>
+                                          {{client.company.name}}
+                                      </td>
+
+                                      <td>
+                                        <div class="fixed-plugin" style="position: relative; top: 0">
+                                            <div class="dropdown show-dropdown open">
+                                                <a href="#" title="localização" (click)="initMapToClient(client)" data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-map fa-1x" style="color: white;"> </i>
+                                                </a>                           
+                                                <ul class="dropdown-menu" x-placement="bottom-start">
+                                                    <li class="header-title"> Localização</li>
+                                                    
+                                                    <div class="center" *ngIf="loadingMap">
+                                                        <mat-spinner>
+                                                        </mat-spinner>
+                                                    </div>
+                                                    <div class="map" [id]="'map-'+client.id" [style.display]="loadingMap ? 'none' : ''">
+                                                        
+                                                    </div>
+                                                 
+                                                   
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                     </td>
+                                      
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

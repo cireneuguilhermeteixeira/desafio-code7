@@ -1,0 +1,106 @@
+<div class="login">
+    
+    <div class="container">
+        <div class="wrapper">
+
+            <h3 class="form-signin-heading">
+
+                <img src="../../assets/img/code7.png" class="logo" alt="Logo" />
+                <br />
+                <b style="font-size: small;font-weight: bold;">Teste CONNVERT</b>
+            </h3>
+                <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                        <div class="nav-tabs-navigation">
+                            <div class="nav-tabs-wrapper">
+                                <ul class="nav nav-tabs" data-tabs="tabs">
+                                    <li class="nav-item">
+                                        <a mat-button class="nav-link active" href="#login" data-toggle="tab">
+                                            <i class="material-icons">login</i> Login
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a mat-button class="nav-link" href="#cadastro" data-toggle="tab">
+                                            <i class="material-icons">app_registration</i> Cadastrar-se
+                                            <div class="ripple-container"></div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="login">
+                                <div>
+                                    <form [formGroup]="loginForm" class="" >
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="CPF">Email: </mat-label>
+                                            <input matInput type="email" formControlName="email" />
+                                        </mat-form-field>
+                            
+                            
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="password">Senha: </mat-label>
+                                            <input matInput type="password" formControlName="password" />
+                                        </mat-form-field>
+
+                            
+                                        <div class="form-group">
+                            
+                                            <button mat-button [disabled]="!loginForm.valid || loading" class="btn btn-primary btn-block" (click)='login()' > 
+                                                <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+                                                ENTRAR
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                            <div class="tab-pane" id="cadastro">
+                                <div>
+                                    <form [formGroup]="registerForm" class="" >
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="name">Nome: </mat-label>
+                                            <input matInput type="text" formControlName="name" />
+                                        </mat-form-field>
+
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="CPF">Email: </mat-label>
+                                            <input matInput type="email" formControlName="email" />
+                                        </mat-form-field>
+                            
+                            
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="password">Senha: </mat-label>
+                                            <input matInput type="password" formControlName="password" />
+                                        </mat-form-field>
+
+                                        <mat-form-field class="form-field">
+                                            <mat-label for="password">Confirmar a senha: </mat-label>
+                                            <input matInput type="password" formControlName="confirmPassword" />
+                                        </mat-form-field>
+
+                            
+                                        <div class="form-group">
+                            
+                                            <button mat-button color="primary" [disabled]="!registerForm.valid || loading" class="btn btn-primary btn-block"  (click)='register()' > 
+                                                <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
+                                                CADASTRAR-SE
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                  </div>
+            <br>
+            <!-- <div style="text-align: center;">
+                <p style="color: #E6534B;">Esqueci Minha Senha</p>
+            </div> -->
+        </div>
+    </div>
+    </div>

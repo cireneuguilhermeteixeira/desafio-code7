@@ -1,0 +1,11 @@
+.center{
+    margin-top: 50px;
+    display: table;
+    margin: 0 auto;
+}
+
+
+.map{
+    width: 100%;
+    margin-top: 35px;
+}
