@@ -1,7 +1,7 @@
 const Debt = require('../models/debt');
-const handleError = require('../utils/handler-error');
-const handleSuccess = require('../utils/handler-success');
-const mongoose = require('../connection/Connection');
+const handleError = require('../../utils/handler-error');
+const handleSuccess = require('../../utils/handler-success');
+const mongoose = require('../../connection/Connection');
 
 
 

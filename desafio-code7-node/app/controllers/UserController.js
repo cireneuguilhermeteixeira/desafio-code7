@@ -1,6 +1,6 @@
-const handleError = require('../utils/handler-error');
-const handleSuccess = require('../utils/handler-success');
-const url = require('../secrets/json_place_holder.json').url;
+const handleError = require('../../utils/handler-error');
+const handleSuccess = require('../../utils/handler-success');
+const url = require('../../secrets/json_place_holder.json').url;
 const axios = require('axios');
 
 

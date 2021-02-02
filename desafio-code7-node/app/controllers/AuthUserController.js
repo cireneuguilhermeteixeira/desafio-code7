@@ -1,9 +1,9 @@
 const User = require('../models/user')
-const handleError = require('../utils/handler-error');
-const handleSuccess = require('../utils/handler-success');
+const handleError = require('../../utils/handler-error');
+const handleSuccess = require('../../utils/handler-success');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authConfig = require('../secrets/auth');
+const authConfig = require('../../secrets/auth');
 
 
 
