@@ -3,12 +3,12 @@ const handleError = require('../../utils/handler-error');
 const handleSuccess = require('../../utils/handler-success');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const authConfig = require('../../secrets/auth');
+const authJWT = require('../../secrets/auth');
 
 
 
 function generateToken(params = {}){
-    return jwt.sign(params, authConfig.secret,{
+    return jwt.sign(params, authJWT.secret,{
         expiresIn: 86400
     });
 }
@@ -50,6 +50,7 @@ exports.authentication = async (req,resp) => {
         
         const result = await bcrypt.compare(password, userFounded.password)
         
+
         userFounded.password = null;
 
         if(!result) return handleError(resp,{message : 'Senha inválida'});

@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const path = require('path');
 const debtRouter = require('./app/routes/debt-routes')
 const authUserRouter = require('./app/routes/auth-user-routes')
-const userRouter = require('./app/routes/user-routes')
+const clientRouter = require('./app/routes/client-routes')
 const cors = require('cors')
 
 const app = express()
@@ -16,7 +16,7 @@ app.use(cors());
 
 const uri = '/api'
 
-app.use(`${uri}/client`,userRouter)
+app.use(`${uri}/client`,clientRouter)
 app.use(`${uri}/auth`,authUserRouter)
 app.use(`${uri}/debt`,debtRouter)
 
@@ -31,3 +31,5 @@ app.get('/*', function(req,res) {
 
 const port = process.env.PORT || 3000
 app.listen( port, ()=> console.log(`servidor rodando na porta ${port}`))
+
+module.exports = app;

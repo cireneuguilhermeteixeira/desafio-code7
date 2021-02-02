@@ -36,15 +36,13 @@ exports.findDebtById = async (req, resp) => {
     try{
         
         const id = mongoose.Types.ObjectId(req.params.id);
-        const debts = await Debt.findOne()
+        const debt = await Debt.findOne()
             .where("_id").equals(id)
             .exec();
-        debts.save();
-        return handleSuccess(resp, debts);
+        return handleSuccess(resp, debt);
 
 
     }catch(error){
-        console.log(error);
         return handleError(resp,error);
     }
 }

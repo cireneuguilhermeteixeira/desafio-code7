@@ -5,7 +5,7 @@ const axios = require('axios');
 
 
 
-exports.findAllUsers = async (req,resp) => {
+exports.findAllClients = async (req,resp) => {
     
     try{
         const { data: result } = await axios.get(`${url}/users`)
